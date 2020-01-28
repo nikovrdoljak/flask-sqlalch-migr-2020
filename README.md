@@ -18,7 +18,7 @@ Ukupno treba proći 6 zadatka za kompletiranje predavanja.
 ```
 pip install flask-sqlalchemy
 ```
-* U app.py datoteku dodati slijedeći kod te ga proučite:
+* U app.py datoteku dodati slijedeći kod, te ga proučite:
 ```
 import os
 from flask_sqlalchemy import SQLAlchemy
@@ -60,7 +60,7 @@ def index():
         return redirect(url_for('index'))
     return render_template('index.html', form=form, name=session.get('name'),known=session.get('known', False))
 ```
-* U index.html predložak dodajte:
+* U index.html predložak promijenite u:
 ```
 <div class="page-header">
     <h1>Pozdrav {% if name %}{{ name }}{% else %}stranče{% endif %}!</h1>
@@ -81,8 +81,10 @@ def index():
 * Pokrenite aplikaciju u VS Code-u, postavite "breakpoint" na prvi red funkcije index(), te pratite u "Debug" prozoru korak po korak (F10) vrijednosti varijabli i izvođenje programa.
 
 ## Zadatak 3 - Pregled korisnika
-* Dodajte dva nova predloška; "users.html" koji izlistava sve korisnike, te "user.html" koji ispisuje podatak o korisniku.
-* Dodati u base.html link na korisnike:
+* Dodajte dva nova predloška
+    * "users.html" koji izlistava sve korisnike,
+    * "user.html" koji ispisuje podatak o korisniku.
+* Dodati u base.html link na popis korisnika:
 ```
 <li><a class="nav-link" href="{{ url_for('users')}}">Korisnici</a></li>
 ```
@@ -134,15 +136,15 @@ def user(id):
 ```
 * Pokrenite aplikaciju i provjerite da se na klik korisnika otvara stranica s podacima o korisniku.
 
-## Zadatak 4 – dodati error page
-* Promijeniti get u get_or_404() i prikazati grešku, tj. dodati error404.html predložak i funkciju:
+## Zadatak 4 – dodati stranicu za grešku 404
+* Promijeniti get u get_or_404() i prikazati grešku, tj. dodati error404.html predložak s tekstom i funkciju:
 ```
 @app.errorhandler(404)
 def page_not_found(e):
 	return render_template('error404.html'), 404
 ```
 
-## Zadatak 5 – dodati brisanje
+## Zadatak 5 – brisanje
 * Dodati na "user.html" predložak link (botun) za brisanje:
 ```
 <a class="btn btn-danger" href="{{ url_for('userdelete', id=user.id ) }}" role="button">Briši</a>
