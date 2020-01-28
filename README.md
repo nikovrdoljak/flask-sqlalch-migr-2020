@@ -193,4 +193,4 @@ flask db upgrade
 * Ponovo otvorite bazu i primijetit ćete novo polje. Također dodana je i nova migracijska skripta.
 
 ## Domaći rad
-Napravite ažuriranje korisnika, brisanje s potvrdom, upravljanje rolama, dodavanje korisnika u rolu i sl.
+Napravite ažuriranje korisnika, brisanje s potvrdom, upravljanje rolama, dodavanje korisnika u rolu, dodajte novu tablicu i sl.
