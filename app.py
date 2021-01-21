@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'blablastring'
+# app.config['BOOTSTRAP_BOOTSWATCH_THEME'] = 'minty'
 
 bootstrap = Bootstrap(app)
 
